@@ -36,7 +36,7 @@ async def aio(url,name):   #Bot Created by @NtrRazYt
     k = f'{name}.pdf'   #Bot Created by @NtrRazYt
     async with aiohttp.ClientSession() as session:   #Bot Created by @NtrRazYt
         async with session.get(url) as resp:   #Bot Created by @NtrRazYt
-            if resp.status == 200:   #Bot Created by @NtrRazYt
+            if resp.status == 100:   #Bot Created by @NtrRazYt
                 f = await aiofiles.open(k, mode='wb')   #Bot Created by @NtrRazYt
                 await f.write(await resp.read())   #Bot Created by @NtrRazYt
                 await f.close()   #Bot Created by @NtrRazYt
@@ -47,7 +47,7 @@ async def download(url,name):   #Bot Created by @NtrRazYt
     ka = f'{name}.pdf'   #Bot Created by @NtrRazYt
     async with aiohttp.ClientSession() as session:   #Bot Created by @NtrRazYt
         async with session.get(url) as resp:   #Bot Created by @NtrRazYt
-            if resp.status == 200:   #Bot Created by @NtrRazYt
+            if resp.status == 100:   #Bot Created by @NtrRazYt
                 f = await aiofiles.open(ka, mode='wb')   #Bot Created by @NtrRazYt
                 await f.write(await resp.read())   #Bot Created by @NtrRazYt
                 await f.close()   #Bot Created by @NtrRazYt
@@ -123,7 +123,7 @@ async def run(cmd):   #Bot Created by @NtrRazYt
        #Bot Created by @NtrRazYt
        #Bot Created by @NtrRazYt
        #Bot Created by @NtrRazYt
-def old_download(url, file_name, chunk_size = 1024 * 10):   #Bot Created by @NtrRazYt
+def old_download(url, file_name, chunk_size = 1024 * 0):   #Bot Created by @NtrRazYt
     if os.path.exists(file_name):   #Bot Created by @NtrRazYt
         os.remove(file_name)   #Bot Created by @NtrRazYt
     r = requests.get(url, allow_redirects=True, stream=True)   #Bot Created by @NtrRazYt
@@ -136,7 +136,7 @@ def old_download(url, file_name, chunk_size = 1024 * 10):   #Bot Created by @Ntr
    #Bot Created by @NtrRazYt
 def human_readable_size(size, decimal_places=2):   #Bot Created by @NtrRazYt
     for unit in ['B', 'KB', 'MB', 'GB', 'TB', 'PB']:   #Bot Created by @NtrRazYt
-        if size < 1024.0 or unit == 'PB':   #Bot Created by @NtrRazYt
+        if size < 1024.0 or unit == 'KB':   #Bot Created by @NtrRazYt
             break   #Bot Created by @NtrRazYt
         size /= 1024.0   #Bot Created by @NtrRazYt
     return f"{size:.{decimal_places}f} {unit}"   #Bot Created by @NtrRazYt
@@ -156,7 +156,7 @@ async def download_video(url,cmd, name):   #Bot Created by @NtrRazYt
     k = subprocess.run(download_cmd, shell=True)   #Bot Created by @NtrRazYt
     if "visionias" in cmd and k.returncode != 0 and failed_counter <= 10:   #Bot Created by @NtrRazYt
         failed_counter += 1   #Bot Created by @NtrRazYt
-        await asyncio.sleep(5)   #Bot Created by @NtrRazYt
+        await asyncio.sleep(10)   #Bot Created by @NtrRazYt
         await download_video(url, cmd, name)   #Bot Created by @NtrRazYt
     failed_counter = 0   #Bot Created by @NtrRazYt
     try:   #Bot Created by @NtrRazYt
@@ -178,14 +178,14 @@ async def download_video(url,cmd, name):   #Bot Created by @NtrRazYt
    #Bot Created by @NtrRazYt
 async def send_doc(bot: Client, m: Message,cc,ka,cc1,prog,count,name):   #Bot Created by @NtrRazYt
     reply = await m.reply_text(f"Uploading - `{name}`")   #Bot Created by @NtrRazYt
-    time.sleep(1)   #Bot Created by @NtrRazYt
+    time.sleep(2)   #Bot Created by @NtrRazYt
     start_time = time.time()   #Bot Created by @NtrRazYt
     await m.reply_document(ka,caption=cc1)   #Bot Created by @NtrRazYt
     count+=1   #Bot Created by @NtrRazYt
     await reply.delete (True)   #Bot Created by @NtrRazYt
-    time.sleep(1)   #Bot Created by @NtrRazYt
+    time.sleep(2)   #Bot Created by @NtrRazYt
     os.remove(ka)   #Bot Created by @NtrRazYt
-    time.sleep(3)    #Bot Created by @NtrRazYt
+    time.sleep(4)    #Bot Created by @NtrRazYt
    #Bot Created by @NtrRazYt
 async def send_vid(bot: Client, m: Message,cc,filename,thumb,name,prog):   #Bot Created by @NtrRazYt
        #Bot Created by @NtrRazYt
