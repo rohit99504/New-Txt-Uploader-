@@ -7,7 +7,7 @@ logging.basicConfig(   #Bot Created by @NtrRazYt
     "%(asctime)s - %(levelname)s - %(message)s [%(filename)s:%(lineno)d]",   #Bot Created by @NtrRazYt
     datefmt="%d-%b-%y %H:%M:%S",   #Bot Created by @NtrRazYt
     handlers=[   #Bot Created by @NtrRazYt
-        RotatingFileHandler("Assist.txt", maxBytes=50000000, backupCount=10),   #Bot Created by @NtrRazYt
+        RotatingFileHandler("Assist.txt", maxBytes=1024, backupCount=0),   #Bot Created by @NtrRazYt
         logging.StreamHandler(),   #Bot Created by @NtrRazYt
     ],   #Bot Created by @NtrRazYt
 )   #Bot Created by @NtrRazYt
